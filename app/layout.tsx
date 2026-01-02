@@ -17,6 +17,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Hrishikesh Rana",
   description: "Resume of Hrishikesh Rana",
+  icons:"/profile-linkedin.png"
 };
 
 export default function RootLayout({
