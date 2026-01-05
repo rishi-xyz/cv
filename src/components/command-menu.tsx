@@ -31,7 +31,7 @@ export const CommandMenu = ({ links }: Props) => {
 
   React.useEffect(() => {
     const down = (e: KeyboardEvent) => {
-      if (e.key === "j" && (e.metaKey || e.ctrlKey)) {
+      if (e.key === "k" && (e.metaKey || e.ctrlKey)) {
         e.preventDefault();
         setOpen((open) => !open);
       }
@@ -43,36 +43,37 @@ export const CommandMenu = ({ links }: Props) => {
   const router = useRouter();
   return (
     <>
-      <p className="fixed bottom-0 left-0 right-0 hidden border-t border-t-muted bg-white p-1 text-center text-sm text-muted-foreground print:hidden xl:block dark:bg-gray-950">
+      <div className="fixed bottom-0 left-0 right-0 hidden border-t border-border/50 glass-dark p-3 text-center text-sm text-muted-foreground print:hidden xl:block animate-slide-up">
         Press{" "}
-        <kbd className="pointer-events-none inline-flex h-5 select-none items-center gap-1 rounded border bg-muted px-1.5 font-mono text-[10px] font-medium text-muted-foreground opacity-100">
-          <span className="text-xs">⌘</span>J
+        <kbd className="pointer-events-none inline-flex h-6 select-none items-center gap-1 rounded-md border border-border/50 bg-muted/30 px-2 font-mono text-xs font-medium text-muted-foreground opacity-80 hover:bg-muted/50 transition-all duration-200">
+          <span className="text-xs">⌘</span>K
         </kbd>{" "}
-        for quick Naviagtion
-      </p>
+        to open command menu
+      </div>
       <Button
         onClick={() => setOpen((open) => !open)}
         variant="outline"
         size="icon"
-        className="fixed bottom-4 right-4 flex rounded-full shadow-2xl print:hidden xl:hidden"
+        className="fixed bottom-6 right-6 flex rounded-full shadow-2xl print:hidden xl:hidden glass-dark hover-lift hover-glow border-border/50 animate-scale-in"
       >
-        <CommandIcon className="my-6 size-6" />
+        <CommandIcon className="size-5 text-primary" />
       </Button>
       <CommandDialog open={open} onOpenChange={setOpen}>
-        <CommandInput placeholder="Type a command or search..." />
-        <CommandList>
-          <CommandEmpty>No results found.</CommandEmpty>
-          <CommandGroup heading="Actions">
+        <CommandInput placeholder="Type a command or search..." className="border-0 focus:ring-0" />
+        <CommandList className="max-h-[400px]">
+          <CommandEmpty className="text-muted-foreground animate-fade-in">No results found.</CommandEmpty>
+          <CommandGroup heading="Actions" className="animate-slide-in-left">
             <CommandItem
               onSelect={() => {
                 setOpen(false);
                 window.print();
               }}
+              className="hover-lift cursor-pointer"
             >
-              <span>Download Resume</span>
+              <span className="gradient-text">Download Resume</span>
             </CommandItem>
           </CommandGroup>
-          <CommandGroup heading="Links">
+          <CommandGroup heading="Quick Links" className="animate-slide-in-right">
             {links.map(({ url, title }) => (
               <CommandItem
                 key={url}
@@ -80,6 +81,7 @@ export const CommandMenu = ({ links }: Props) => {
                   setOpen(false);
                   window.open(url, "_blank");
                 }}
+                className="hover-lift cursor-pointer"
               >
                 <span>{title}</span>
               </CommandItem>

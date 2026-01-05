@@ -9,25 +9,25 @@ import { ExternalLinkIcon, GithubIcon } from "lucide-react";
 export const ProjectSection = () => {
     return (
         <Section>
-            <div className="space-y-8">
-                <h2 className="text-3xl font-bold tracking-tight text-foreground">
+            <div className="space-y-10">
+                <h2 className="text-4xl font-bold tracking-tight gradient-text">
                     Projects
                 </h2>
-                <div className="space-y-6">
+                <div className="space-y-8">
                     {RESUME_DATA.projects.map((proj, index) => {
                         return (
                             <div
                                 key={proj.title}
-                                className="animate-slide-up"
+                                className="animate-slide-in-right"
                                 style={{ animationDelay: `${index * 0.1}s` }}
                             >
-                                <Card className="border-border/50 bg-card/50 backdrop-blur-sm hover:bg-card/80 transition-all duration-300 hover:shadow-lg hover:shadow-black/5">
+                                <Card className="glass-dark border-border/30 hover-lift hover-glow">
                                     <CardHeader>
                                         <div className="space-y-4">
                                             <div className="flex items-center justify-between gap-x-4">
-                                                <h3 className="text-xl font-semibold leading-none hover:scale-102 transition-transform duration-200">
+                                                <h3 className="text-2xl font-semibold leading-none hover-lift">
                                                     <a 
-                                                        className="hover:text-primary transition-colors" 
+                                                        className="hover:text-primary transition-colors duration-200" 
                                                         href={proj.link.website}
                                                         target="_blank"
                                                         rel="noopener noreferrer"
@@ -45,7 +45,7 @@ export const ProjectSection = () => {
                                                     >
                                                         <Badge
                                                             variant="secondary"
-                                                            className="text-xs px-2 py-1 bg-background/50 border-border/50"
+                                                            className="text-xs px-3 py-1 glass-dark border-border/30 hover-lift"
                                                         >
                                                             {tech}
                                                         </Badge>
@@ -54,16 +54,16 @@ export const ProjectSection = () => {
                                             </div>
                                         </div>
                                     </CardHeader>
-                                    <CardContent className="space-y-4">
-                                        <p className="text-sm leading-relaxed text-muted-foreground">
+                                    <CardContent className="space-y-6">
+                                        <p className="text-base leading-relaxed text-muted-foreground">
                                             {proj.description}
                                         </p>
-                                        <div className="flex gap-x-3">
-                                            <div className="hover:scale-105 transition-transform duration-200">
+                                        <div className="flex gap-x-4">
+                                            <div className="hover-lift">
                                                 <Button
                                                     variant="outline"
                                                     size="sm"
-                                                    className="border-border/50 bg-background/50 hover:bg-background/80"
+                                                    className="glass-dark border-border/30 hover-glow px-4 py-2"
                                                     asChild
                                                 >
                                                     <Link 
@@ -79,13 +79,13 @@ export const ProjectSection = () => {
                                             </div>
                                             {proj.link.code && (
                                                 <div 
-                                                    className="hover:scale-105 transition-transform duration-200 animate-fade-in"
+                                                    className="hover-lift animate-fade-in"
                                                     style={{ animationDelay: `${index * 0.1 + 0.3}s` }}
                                                 >
                                                     <Button
                                                         variant="outline"
                                                         size="sm"
-                                                        className="border-border/50 bg-background/50 hover:bg-background/80"
+                                                        className="glass-dark border-border/30 hover-glow px-4 py-2"
                                                         asChild
                                                     >
                                                         <Link 
