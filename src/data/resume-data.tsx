@@ -1,7 +1,68 @@
 
 import { GitHubIcon, LinkedInIcon, XIcon } from "@/src/components/icons";
 
-export const RESUME_DATA = {
+type IconType = React.ComponentType<{ className?: string }>;
+
+interface SocialLink {
+  name: string;
+  url: string;
+  icon: IconType;
+}
+
+interface ContactInfo {
+  email: string;
+  tel: string;
+  social: SocialLink[];
+}
+
+interface Education {
+  school: string;
+  degree: string;
+  grade: string;
+  start: string;
+  end: string;
+}
+
+interface WorkExperience {
+  company: string;
+  link: string;
+  badges: string[];
+  title: string;
+  start: string;
+  end: string;
+  description: string;
+}
+
+interface ProjectLink {
+  website: string;
+  code: string;
+}
+
+interface ProjectType {
+  title: string;
+  heading: string;
+  date: string;
+  techStack: string[];
+  description: string;
+  link: ProjectLink;
+}
+
+interface ResumeDataType {
+  name: string;
+  initials: string;
+  location: string;
+  locationLink: string;
+  about: string;
+  summary: string;
+  personalWebsiteUrl: string;
+  contact: ContactInfo;
+  education: Education[];
+  work: WorkExperience[];
+  skills: string[];
+  projects: ProjectType[];
+}
+
+export const RESUME_DATA: ResumeDataType = {
   name: "Hrishikesh Rana",
   initials: "HR",
   location: "Bengaluru, India",
@@ -75,20 +136,67 @@ export const RESUME_DATA = {
   projects: [
     {
       title: "Gama",
-      date: "Aug, 2025",
+      heading:"Your Web3 Wallet, your blockchain journey starts here",
+      date: "2025",
       techStack: [
-        "Side Project",
         "TypeScript",
         "Next.js",
-        "Vite",
-        "GraphQL",
-        "WebRTC",
+        "Gemini AI",
+        "@solana/web3.js",
+        "ethers",
+        "crypto-js",
+        "framer-motion",
       ],
-      description: "Your Web3 Wallet, your blockchain journey starts here",
+      description: "Gama is a platform to create Ethereum and Solana wallets, Built with Military-grade encryption and decryption.",
       link: {
-        label: "consultly.com",
-        website: "https://consultly.com/",
+        website: "https://gama-wallet.vercel.app/",
         code: "https://github.com/rishi-xyz/gama",
+      },
+    },{
+      title: "CryptAI",
+      heading:"Talk to blockchain in Natural Language",
+      date: "2025",
+      techStack: [
+        "TypeScript",
+        "Next.js",
+        "Gemini AI",
+        "ethers",
+        "crypto-js",
+        "framer-motion",
+        "vercel ai sdk"
+      ],
+      description: "CryptAI is a chatbot similar to chat gpt which helps you interact With blockchain using natural language using AI Powered by Google Gemini and Vercel AI SDK",
+      link: {
+        website: "https://cryptai-eight.vercel.app/",
+        code: "https://github.com/rishi-xyz/cryptai",
+      },
+    },{
+      title:"DataSphere",
+      heading:"Landing Page DataSphere - Secure. Decentralized. Limitless Storage",
+      date:"2025",
+      techStack: [
+        "TypeScript",
+        "Next.js",
+        "framer-motion"
+      ],
+      description: "DataSphere is a landing page for an organisation that provides decentralized storage solution with secure, encrypted, and limitless storage using blockchain technology. Built with modern web technologies for optimal performance and user experience, featuring a responsive design and smooth animations.",
+      link: {
+        website: "https://datasphere-one.vercel.app/",
+        code: "https://github.com/rishi-xyz/DataSphere",
+      },
+    },{
+      title:"Ethereum Agent Kit",
+      heading:"Ethereum Agent Kit - Autonomous Agents for Ethereum Interaction",
+      date:"2025",
+      techStack: [
+        "TypeScript",
+        "ethersjs",
+        "gemini ai",
+      ],
+      description: "Ethereum Agent Kit enables developers to build autonomous agents that can interact with Ethereum smart contracts using natural language commands powered by Gemini AI. Check balance,send Eth and much more",
+      link: {
+        website: "https://datasphere-one.vercel.app/",
+        code: "https://github.com/rishi-xyz/DataSphere",
       },
     },
   ],
