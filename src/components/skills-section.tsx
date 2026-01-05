@@ -18,7 +18,7 @@ export const SkillsSection = () => {
                                 style={{ animationDelay: `${index * 0.05}s` }}
                             >
                                 <Badge 
-                                    className="px-4 py-2 text-sm glass-dark border-border/30 hover-glow transition-all duration-300"
+                                    className="px-4 py-2 text-sm  border-border/30 hover-glow transition-all duration-300"
                                 >
                                     {skill}
                                 </Badge>

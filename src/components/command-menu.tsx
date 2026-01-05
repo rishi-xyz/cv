@@ -24,7 +24,7 @@ export const CommandMenu = ({ links }: Props) => {
   const [open, setOpen] = React.useState(false);
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = React.useState(false);
-  
+
   React.useEffect(() => {
     setMounted(true);
   }, []);
@@ -60,17 +60,21 @@ export const CommandMenu = ({ links }: Props) => {
       </Button>
       <CommandDialog open={open} onOpenChange={setOpen}>
         <CommandInput placeholder="Type a command or search..." className="border-0 focus:ring-0" />
-        <CommandList className="max-h-[400px]">
+        <CommandList className="max-h-100">
           <CommandEmpty className="text-muted-foreground animate-fade-in">No results found.</CommandEmpty>
-          <CommandGroup heading="Actions" className="animate-slide-in-left">
+          <CommandGroup heading="Actions" >
             <CommandItem
               onSelect={() => {
                 setOpen(false);
-                window.print();
+                window.open(
+                  "/hrishikesh-resume-jan-26.pdf",
+                  "_blank",
+                  "noopener,noreferrer"
+                )
               }}
               className="hover-lift cursor-pointer"
             >
-              <span className="gradient-text">Download Resume</span>
+              <span className="gradient-text">View Resume</span>
             </CommandItem>
           </CommandGroup>
           <CommandGroup heading="Quick Links" className="animate-slide-in-right">
