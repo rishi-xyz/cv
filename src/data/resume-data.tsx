@@ -34,7 +34,7 @@ interface WorkExperience {
 }
 
 interface ProjectLink {
-  website: string;
+  website?: string;
   code: string;
 }
 
@@ -171,20 +171,6 @@ export const RESUME_DATA: ResumeDataType = {
         code: "https://github.com/rishi-xyz/cryptai",
       },
     },{
-      title:"DataSphere",
-      heading:"Landing Page DataSphere - Secure. Decentralized. Limitless Storage",
-      date:"2025",
-      techStack: [
-        "TypeScript",
-        "Next.js",
-        "framer-motion"
-      ],
-      description: "DataSphere is a landing page for an organisation that provides decentralized storage solution with secure, encrypted, and limitless storage using blockchain technology. Built with modern web technologies for optimal performance and user experience, featuring a responsive design and smooth animations.",
-      link: {
-        website: "https://datasphere-one.vercel.app/",
-        code: "https://github.com/rishi-xyz/DataSphere",
-      },
-    },{
       title:"Ethereum Agent Kit",
       heading:"Ethereum Agent Kit - Autonomous Agents for Ethereum Interaction",
       date:"2025",
@@ -195,8 +181,7 @@ export const RESUME_DATA: ResumeDataType = {
       ],
       description: "Ethereum Agent Kit enables developers to build autonomous agents that can interact with Ethereum smart contracts using natural language commands powered by Gemini AI. Check balance,send Eth and much more",
       link: {
-        website: "https://datasphere-one.vercel.app/",
-        code: "https://github.com/rishi-xyz/DataSphere",
+        code: "https://github.com/rishi-xyz/Ethereum-agent-kit",
       },
     },
   ],

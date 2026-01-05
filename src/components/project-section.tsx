@@ -86,7 +86,7 @@ export const ProjectSection = () => {
                                                     size="sm"
                                                     className="glass-dark border-border/30 hover-glow px-4 py-2"
                                                     asChild
-                                                >
+                                                >{proj.link.website &&
                                                     <Link
                                                         href={proj.link.website}
                                                         target="_blank"
@@ -95,7 +95,8 @@ export const ProjectSection = () => {
                                                     >
                                                         <ExternalLinkIcon className="h-4 w-4" />
                                                         Live Demo
-                                                    </Link>
+                                                    </Link> 
+                                                }
                                                 </Button>
                                             </div>
                                             {proj.link.code && (
