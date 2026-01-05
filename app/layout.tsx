@@ -15,6 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase : new URL('https://rishixyz.com'),
   title: "Hrishikesh Rana | Full-Stack Developer",
   description: "Computer Science undergraduate specializing in AI/ML. Building reliable, scalable applications with focus on clean backend systems, real-time features, and secure APIs.",
   icons: "/profile-linkedin.png",

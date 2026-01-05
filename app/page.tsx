@@ -11,11 +11,6 @@ import { ProjectSection } from "@/src/components/project-section";
 import { SkillsSection } from "@/src/components/skills-section";
 import { NavigationSidebar } from "@/src/components/navigation-sidebar";
 
-export const metadata: Metadata = {
-  title: `${RESUME_DATA.name} | ${RESUME_DATA.about}`,
-  description: RESUME_DATA.summary,
-};
-
 export default function Page() {
   return (
     <>  
