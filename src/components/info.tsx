@@ -31,41 +31,50 @@ export const InfoSection = () => {
             
             <div className="flex items-center justify-center space-x-2 print:hidden md:justify-start">
               {RESUME_DATA.contact.email && (
-                <Button
-                  className="h-10 w-10 rounded-full border-border/20 bg-background/50 backdrop-blur-sm hover:bg-background/80 transition-all duration-200"
-                  variant="outline"
-                  size="icon"
-                  asChild
-                >
-                  <Link href={`mailto:${RESUME_DATA.contact.email}`}>
-                    <MailIcon className="h-4 w-4" />
-                  </Link>
-                </Button>
+                <div className="hover:scale-110 transition-transform duration-200">
+                  <Button
+                    className="h-10 w-10 rounded-full border-border/20 bg-background/50 backdrop-blur-sm hover:bg-background/80 transition-all duration-200"
+                    variant="outline"
+                    size="icon"
+                    asChild
+                  >
+                    <Link href={`mailto:${RESUME_DATA.contact.email}`}>
+                      <MailIcon className="h-4 w-4" />
+                    </Link>
+                  </Button>
+                </div>
               )}
               {RESUME_DATA.contact.tel && (
-                <Button
-                  className="h-10 w-10 rounded-full border-border/20 bg-background/50 backdrop-blur-sm hover:bg-background/80 transition-all duration-200"
-                  variant="outline"
-                  size="icon"
-                  asChild
-                >
-                  <Link href={`tel:${RESUME_DATA.contact.tel}`}>
-                    <PhoneIcon className="h-4 w-4" />
-                  </Link>
-                </Button>
+                <div className="hover:scale-110 transition-transform duration-200">
+                  <Button
+                    className="h-10 w-10 rounded-full border-border/20 bg-background/50 backdrop-blur-sm hover:bg-background/80 transition-all duration-200"
+                    variant="outline"
+                    size="icon"
+                    asChild
+                  >
+                    <Link href={`tel:${RESUME_DATA.contact.tel}`}>
+                      <PhoneIcon className="h-4 w-4" />
+                    </Link>
+                  </Button>
+                </div>
               )}
-              {RESUME_DATA.contact.social.map((social) => (
-                <Button
+              {RESUME_DATA.contact.social.map((social, index) => (
+                <div
                   key={social.name}
-                  className="h-10 w-10 rounded-full border-border/20 bg-background/50 backdrop-blur-sm hover:bg-background/80 transition-all duration-200"
-                  variant="outline"
-                  size="icon"
-                  asChild
+                  className="hover:scale-110 transition-transform duration-200"
+                  style={{ animationDelay: `${index * 0.1}s` }}
                 >
-                  <Link href={social.url} target="_blank" rel="noopener noreferrer">
-                    <social.icon className="h-4 w-4" />
-                  </Link>
-                </Button>
+                  <Button
+                    className="h-10 w-10 rounded-full border-border/20 bg-background/50 backdrop-blur-sm hover:bg-background/80 transition-all duration-200"
+                    variant="outline"
+                    size="icon"
+                    asChild
+                  >
+                    <Link href={social.url} target="_blank" rel="noopener noreferrer">
+                      <social.icon className="h-4 w-4" />
+                    </Link>
+                  </Button>
+                </div>
               ))}
             </div>
             
@@ -83,7 +92,7 @@ export const InfoSection = () => {
             </div>
           </div>
 
-          <div className="relative">
+          <div className="relative hover:scale-105 transition-transform duration-300">
             <div className="absolute inset-0 bg-gradient-to-r from-violet-500/20 to-cyan-500/20 blur-xl rounded-full"></div>
             <Avatar className="relative h-32 w-32 border-2 border-border/50">
               <AvatarImage alt={RESUME_DATA.name} src="/profile-linkedin.png" />

@@ -6,16 +6,23 @@ export const SkillsSection = () => {
     return (
         <Section>
             <div className="space-y-8">
-                <h2 className="text-3xl font-bold tracking-tight text-foreground">Skills</h2>
+                <h2 className="text-3xl font-bold tracking-tight text-foreground">
+                    Skills
+                </h2>
                 <div className="flex flex-wrap gap-x-3 gap-y-3">
-                    {RESUME_DATA.skills.map((skill) => {
+                    {RESUME_DATA.skills.map((skill, index) => {
                         return (
-                            <Badge 
-                                key={skill} 
-                                className="px-3 py-2 text-sm bg-background/50 border-border/50 hover:bg-background/80 transition-colors"
+                            <div
+                                key={skill}
+                                className="animate-scale-in hover:scale-105 hover:-translate-y-0.5 transition-all duration-200 cursor-pointer"
+                                style={{ animationDelay: `${index * 0.05}s` }}
                             >
-                                {skill}
-                            </Badge>
+                                <Badge 
+                                    className="px-3 py-2 text-sm bg-background/50 border-border/50 hover:bg-background/80 transition-colors"
+                                >
+                                    {skill}
+                                </Badge>
+                            </div>
                         );
                     })}
                 </div>

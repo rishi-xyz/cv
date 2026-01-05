@@ -2,7 +2,6 @@ import { Card, CardHeader, CardContent } from "@/src/components/ui/card";
 import { Badge } from "@/src/components/ui/badge";
 import { CommandMenu } from "@/src/components/command-menu";
 import { Metadata } from "next";
-import { Section } from "@/src/components/ui/section";
 import { RESUME_DATA } from "@/src/data/resume-data";
 import { InfoSection } from "@/src/components/info";
 import { AboutSection } from "@/src/components/about-section";
