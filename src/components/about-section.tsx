@@ -4,10 +4,12 @@ import { Section } from "./ui/section";
 export const AboutSection = () => {
     return (
         <Section>
-            <h2 className="text-xl font-bold">About</h2>
-            <p className="text-pretty font-mono text-sm text-muted-foreground">
-                {RESUME_DATA.summary}
-            </p>
+            <div className="space-y-4">
+                <h2 className="text-3xl font-bold tracking-tight text-foreground">About</h2>
+                <p className="text-base leading-relaxed text-muted-foreground max-w-3xl">
+                    {RESUME_DATA.summary}
+                </p>
+            </div>
         </Section>
     );
 };

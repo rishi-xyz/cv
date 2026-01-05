@@ -6,79 +6,92 @@ import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
 
 export const InfoSection = () => {
     return (
-        <div className="flex items-center justify-between">
-          <div className="flex-1 space-y-1.5">
-            <h1 className="text-2xl font-bold">{RESUME_DATA.name}</h1>
-            <p className="max-w-md text-pretty font-mono text-sm text-muted-foreground">
-              {RESUME_DATA.about}
-            </p>
-            <p className="max-w-md items-center text-pretty font-mono text-xs text-muted-foreground">
+        <div className="flex flex-col items-center space-y-6 text-center md:flex-row md:text-left md:space-y-0 md:space-x-8">
+          <div className="flex-1 space-y-4">
+            <div className="space-y-2">
+              <h1 className="text-4xl font-bold tracking-tight text-foreground md:text-5xl">
+                {RESUME_DATA.name}
+              </h1>
+              <p className="text-lg font-medium text-muted-foreground">
+                {RESUME_DATA.about}
+              </p>
+            </div>
+            
+            <div className="flex items-center justify-center space-x-1 text-sm text-muted-foreground md:justify-start">
+              <GlobeIcon className="h-4 w-4" />
               <a
-                className="inline-flex gap-x-1.5 align-baseline leading-none hover:underline"
+                className="hover:text-foreground transition-colors"
                 href={RESUME_DATA.locationLink}
-                target="blank"
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                <GlobeIcon className="size-3" />
                 {RESUME_DATA.location}
               </a>
-            </p>
-            <div className="flex gap-x-1 pt-1 font-mono text-sm text-muted-foreground print:hidden">
-              {RESUME_DATA.contact.email ? (
+            </div>
+            
+            <div className="flex items-center justify-center space-x-2 print:hidden md:justify-start">
+              {RESUME_DATA.contact.email && (
                 <Button
-                  className="size-8"
+                  className="h-10 w-10 rounded-full border-border/20 bg-background/50 backdrop-blur-sm hover:bg-background/80 transition-all duration-200"
                   variant="outline"
                   size="icon"
                   asChild
                 >
                   <Link href={`mailto:${RESUME_DATA.contact.email}`}>
-                    <MailIcon className="size-4" />
+                    <MailIcon className="h-4 w-4" />
                   </Link>
                 </Button>
-              ) : null}
-              {RESUME_DATA.contact.tel ? (
+              )}
+              {RESUME_DATA.contact.tel && (
                 <Button
-                  className="size-8"
+                  className="h-10 w-10 rounded-full border-border/20 bg-background/50 backdrop-blur-sm hover:bg-background/80 transition-all duration-200"
                   variant="outline"
                   size="icon"
                   asChild
                 >
                   <Link href={`tel:${RESUME_DATA.contact.tel}`}>
-                    <PhoneIcon className="size-4" />
+                    <PhoneIcon className="h-4 w-4" />
                   </Link>
                 </Button>
-              ) : null}
+              )}
               {RESUME_DATA.contact.social.map((social) => (
                 <Button
                   key={social.name}
-                  className="size-8"
+                  className="h-10 w-10 rounded-full border-border/20 bg-background/50 backdrop-blur-sm hover:bg-background/80 transition-all duration-200"
                   variant="outline"
                   size="icon"
                   asChild
                 >
-                  <Link href={social.url}>
-                    <social.icon className="size-4" />
+                  <Link href={social.url} target="_blank" rel="noopener noreferrer">
+                    <social.icon className="h-4 w-4" />
                   </Link>
                 </Button>
               ))}
             </div>
-            <div className="hidden flex-col gap-x-1 font-mono text-sm text-muted-foreground print:flex">
-              {RESUME_DATA.contact.email ? (
-                <Link href={`mailto:${RESUME_DATA.contact.email}`}>
-                  <span className="underline">{RESUME_DATA.contact.email}</span>
+            
+            <div className="hidden flex-col space-y-1 text-sm text-muted-foreground print:flex">
+              {RESUME_DATA.contact.email && (
+                <Link href={`mailto:${RESUME_DATA.contact.email}`} className="hover:text-foreground transition-colors">
+                  {RESUME_DATA.contact.email}
                 </Link>
-              ) : null}
-              {RESUME_DATA.contact.tel ? (
-                <Link href={`tel:${RESUME_DATA.contact.tel}`}>
-                  <span className="underline">{RESUME_DATA.contact.tel}</span>
+              )}
+              {RESUME_DATA.contact.tel && (
+                <Link href={`tel:${RESUME_DATA.contact.tel}`} className="hover:text-foreground transition-colors">
+                  {RESUME_DATA.contact.tel}
                 </Link>
-              ) : null}
+              )}
             </div>
           </div>
 
-          <Avatar className="size-28">
-            <AvatarImage alt={RESUME_DATA.name} src={"/profile-linkedin.png"} />
-            <AvatarFallback>{RESUME_DATA.initials}</AvatarFallback>
-          </Avatar>
+          <div className="relative">
+            <div className="absolute inset-0 bg-gradient-to-r from-violet-500/20 to-cyan-500/20 blur-xl rounded-full"></div>
+            <Avatar className="relative h-32 w-32 border-2 border-border/50">
+              <AvatarImage alt={RESUME_DATA.name} src="/profile-linkedin.png" />
+              <AvatarFallback className="bg-background text-foreground text-xl font-semibold">
+                {RESUME_DATA.initials}
+              </AvatarFallback>
+            </Avatar>
+          </div>
         </div>
     );
 };

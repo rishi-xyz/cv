@@ -15,9 +15,31 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Hrishikesh Rana",
-  description: "Resume of Hrishikesh Rana",
-  icons:"/profile-linkedin.png"
+  title: "Hrishikesh Rana | Full-Stack Developer",
+  description: "Computer Science undergraduate specializing in AI/ML. Building reliable, scalable applications with focus on clean backend systems, real-time features, and secure APIs.",
+  icons: "/profile-linkedin.png",
+  openGraph: {
+    title: "Hrishikesh Rana | Full-Stack Developer",
+    description: "Computer Science undergraduate specializing in AI/ML. Building reliable, scalable applications with focus on clean backend systems.",
+    url: "https://rishixyz.com",
+    siteName: "Hrishikesh Rana",
+    images: [
+      {
+        url: "/profile-linkedin.png",
+        width: 1200,
+        height: 630,
+        alt: "Hrishikesh Rana",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Hrishikesh Rana | Full-Stack Developer",
+    description: "Computer Science undergraduate specializing in AI/ML. Building reliable, scalable applications.",
+    images: ["/profile-linkedin.png"],
+  },
 };
 
 export default function RootLayout({

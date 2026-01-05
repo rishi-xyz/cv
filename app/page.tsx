@@ -18,21 +18,35 @@ export const metadata: Metadata = {
 
 export default function Page() {
   return (
-    <main className="relative mx-auto w-full scroll-my-12 overflow-auto p-4 print:p-12 md:p-16 dark:bg-gray-950">
-      <section className="mx-auto w-full max-w-2xl space-y-8 bg-white print:space-y-6 dark:bg-gray-950">
-        {/**Info */}
-        <InfoSection />
-        {/**About Section */}
-        <AboutSection/>
-        {/**Work Experience */}
-        <WorkExpSection />
-        {/**Education */}
-        <EducationSection />
-        {/**Projects */}
-        <ProjectSection />
-        {/**Skills */}
-        <SkillsSection />
-      </section>
+    <main className="min-h-screen bg-background text-foreground antialiased">
+      <div className="mx-auto w-full max-w-4xl px-6 py-12 md:px-8 md:py-16 lg:px-12">
+        <div className="space-y-16">
+          {/**Info */}
+          <div className="animate-fade-in">
+            <InfoSection />
+          </div>
+          {/**About Section */}
+          <div className="animate-slide-up" style={{ animationDelay: '0.2s' }}>
+            <AboutSection/>
+          </div>
+          {/**Work Experience */}
+          <div className="animate-slide-up" style={{ animationDelay: '0.4s' }}>
+            <WorkExpSection />
+          </div>
+          {/**Education */}
+          <div className="animate-slide-up" style={{ animationDelay: '0.6s' }}>
+            <EducationSection />
+          </div>
+          {/**Projects */}
+          <div className="animate-slide-up" style={{ animationDelay: '0.8s' }}>
+            <ProjectSection />
+          </div>
+          {/**Skills */}
+          <div className="animate-slide-up" style={{ animationDelay: '1s' }}>
+            <SkillsSection />
+          </div>
+        </div>
+      </div>
 
       <CommandMenu
         links={[

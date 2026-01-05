@@ -87,7 +87,7 @@ export const RESUME_DATA = {
       link: {
         label: "consultly.com",
         website: "https://consultly.com/",
-        code: "",
+        code: "https://github.com/rishi-xyz/gama",
       },
     },
   ],
