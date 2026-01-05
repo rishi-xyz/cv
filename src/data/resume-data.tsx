@@ -75,6 +75,7 @@ export const RESUME_DATA = {
   projects: [
     {
       title: "Gama",
+      date: "Aug, 2025",
       techStack: [
         "Side Project",
         "TypeScript",
