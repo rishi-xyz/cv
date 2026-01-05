@@ -12,7 +12,7 @@ import {
   CommandSeparator,
 } from "@/src/components/ui/command";
 import { Button } from "./ui/button";
-import { CommandIcon, MoonIcon, SunIcon } from "lucide-react";
+import { CommandIcon } from "lucide-react";
 import { useTheme } from "next-themes";
 import { useRouter } from "next/navigation";
 
@@ -41,31 +41,6 @@ export const CommandMenu = ({ links }: Props) => {
     return () => document.removeEventListener("keydown", down);
   }, []);
   const router = useRouter();
-
-  const toggleTheme = () => {
-    if (theme === "dark") {
-      setTheme("light");
-    } else if (theme === "light") {
-      setTheme("system");
-    } else {
-      setTheme("dark");
-    }
-  };
-
-  const getThemeIcon = () => {
-    if (!mounted) return <SunIcon className="h-4 w-4" />;
-    if (theme === "dark") return <SunIcon className="h-4 w-4" />;
-    if (theme === "light") return <MoonIcon className="h-4 w-4" />;
-    return <SunIcon className="h-4 w-4" />;
-  };
-
-  const getThemeText = () => {
-    if (!mounted) return "Toggle Theme";
-    if (theme === "dark") return "Switch to Light";
-    if (theme === "light") return "Switch to System";
-    return "Switch to Dark";
-  };
-
   return (
     <>
       <p className="fixed bottom-0 left-0 right-0 hidden border-t border-t-muted bg-white p-1 text-center text-sm text-muted-foreground print:hidden xl:block dark:bg-gray-950">
@@ -88,15 +63,6 @@ export const CommandMenu = ({ links }: Props) => {
         <CommandList>
           <CommandEmpty>No results found.</CommandEmpty>
           <CommandGroup heading="Actions">
-            <CommandItem
-              onSelect={() => {
-                setOpen(false);
-                toggleTheme();
-              }}
-            >
-              {getThemeIcon()}
-              <span>{getThemeText()}</span>
-            </CommandItem>
             <CommandItem
               onSelect={() => {
                 setOpen(false);
