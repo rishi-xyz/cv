@@ -9,7 +9,7 @@ export const RESUME_DATA = {
   about:
     "Code, Crypto, AI and Finance",
   summary:
-    "I love building new things from 0 to 1 to 100. Full Stack Developer and DevOps Engineer focused on learning. ",
+    `I'm Hrishikesh Rana, a Computer Science undergraduate with concentration in Artificial Intelligence and Machine Learning (AIML).I love building new things from 0 to 1 to 100, I build reliable, scalable  applications with a strong focus on clean backend systems.My work often involves real-time systems, secure APIs, and event-driven features.`,
   personalWebsiteUrl: "https://rishixyz.com",
   contact: {
     email: "itsranahrishikesh@gmail.com",
@@ -36,6 +36,7 @@ export const RESUME_DATA = {
     {
       school: "SEA College of Engineering and Technology",
       degree: "Bachelor of Engineering in Artificial Intelligence and Machine Learning ",
+      grade:"8.4",
       start: "2023",
       end: "2027",
     },
@@ -49,7 +50,7 @@ export const RESUME_DATA = {
       start: "Oct",
       end: "Dec 2025",
       description:
-        `Delivered end-to-end features spanning frontend and backend, Contributed to System design, development, integration and docs of applications and DevOps system.`,
+        `Delivered end-to-end features spanning frontend and backend, Contributed to development, integration and docs of applications and DevOps system.`,
     },{
       company: "Swago Co",
       link: "https://swago.co/",
@@ -58,7 +59,7 @@ export const RESUME_DATA = {
       start: "Aug",
       end: "Sep 2025",
       description:
-        `Delivered 5+ end-to-end features spanning frontend and backend, ensuring seamless user experiences and robust API integrations. Contributed to smart contract design, development, and integration into decentralized applications.Implemented 2 AI-driven features and maintained deployment workflows, ensuring smooth CI/CD and reliable production releases.`,
+        `Delivered 5+ end-to-end features spanning frontend and backend. Contributed to smart contract design, development, and integration into decentralized applications.Implemented 2 AI-driven features and maintained deployment workflows, ensuring smooth CI/CD and reliable production releases.`,
     },
   ],
   skills: [
@@ -85,7 +86,8 @@ export const RESUME_DATA = {
       description: "Your Web3 Wallet, your blockchain journey starts here",
       link: {
         label: "consultly.com",
-        href: "https://consultly.com/",
+        website: "https://consultly.com/",
+        code: "",
       },
     },
   ],

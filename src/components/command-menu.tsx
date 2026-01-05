@@ -14,6 +14,7 @@ import {
 import { Button } from "./ui/button";
 import { CommandIcon } from "lucide-react";
 import { useTheme } from "next-themes";
+import { useRouter } from "next/navigation";
 
 interface Props {
   links: { url: string; title: string }[];
@@ -33,6 +34,7 @@ export const CommandMenu = ({ links }: Props) => {
     document.addEventListener("keydown", down);
     return () => document.removeEventListener("keydown", down);
   }, []);
+  const router = useRouter();
 
   return (
     <>
@@ -41,7 +43,7 @@ export const CommandMenu = ({ links }: Props) => {
         <kbd className="pointer-events-none inline-flex h-5 select-none items-center gap-1 rounded border bg-muted px-1.5 font-mono text-[10px] font-medium text-muted-foreground opacity-100">
           <span className="text-xs">⌘</span>J
         </kbd>{" "}
-        to open the command menu
+        for quick Naviagtion
       </p>
       <Button
         onClick={() => setOpen((open) => !open)}
@@ -62,15 +64,7 @@ export const CommandMenu = ({ links }: Props) => {
                 window.print();
               }}
             >
-              <span>Print</span>
-            </CommandItem>
-            <CommandItem
-              onSelect={(prev) => {
-                theme === "dark" ? setTheme("light") : setTheme("dark");
-                setOpen(false);
-              }}
-            >
-              <span>Toggle Theme</span>
+              <span>Download Resume</span>
             </CommandItem>
           </CommandGroup>
           <CommandGroup heading="Links">
