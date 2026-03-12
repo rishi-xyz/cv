@@ -44,7 +44,7 @@ export const InfoSection = () => {
                   </Button>
                 </div>
               )}
-              {RESUME_DATA.contact.tel && (
+              {/* {RESUME_DATA.contact.tel && (
                 <div className="hover-lift">
                   <Button
                     className="h-12 w-12 rounded-full glass-dark border-border/30 hover-glow transition-all duration-300"
@@ -57,7 +57,7 @@ export const InfoSection = () => {
                     </Link>
                   </Button>
                 </div>
-              )}
+              )} */}
               {RESUME_DATA.contact.social.map((social, index) => (
                 <div
                   key={social.name}

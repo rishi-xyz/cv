@@ -11,7 +11,7 @@ interface SocialLink {
 
 interface ContactInfo {
   email: string;
-  tel: string;
+  tel?: string;
   social: SocialLink[];
 }
 
@@ -74,7 +74,7 @@ export const RESUME_DATA: ResumeDataType = {
   personalWebsiteUrl: "https://rishixyz.com",
   contact: {
     email: "itsranahrishikesh@gmail.com",
-    tel: "+9106283495511",
+    // tel: "+9106283495511",
     social: [
       {
         name: "GitHub",
