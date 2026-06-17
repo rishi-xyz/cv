@@ -50,4 +50,14 @@ export const genaiFiles: GenAIFiles[] = [
     description: "Single Doc Analysis - Cohere API document summarization",
     path: "/genai/8-prgm-single.py",
   },
+  {
+    name: "9-prgm.py",
+    description: "Institution Details - Pydantic schema with Wikipedia extraction",
+    path: "/genai/9-prgm.py",
+  },
+  {
+    name: "10-prgm.py",
+    description: "IPC Chatbot - RAG-based legal assistant with Cohere",
+    path: "/genai/10-prgm.py",
+  },
 ];
